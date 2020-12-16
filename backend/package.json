@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "description": "Node backend with tensorflow",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "tensorflowjs"
+  ],
+  "author": "colinfendrick",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.15.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
