@@ -1,5 +1,6 @@
 exports.get = async (req, res) => {
-	res.send({
+	console.log('Healthcheck initiated');
+	res.status(200).send({
 		messsage: 'Welcome'
 	});
 }
