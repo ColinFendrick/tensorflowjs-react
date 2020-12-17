@@ -1,0 +1,10 @@
+.info-card {
+  display: flex;
+  margin: 20px 0;  
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.info-card > * {
+  margin: 0 10px;
+}

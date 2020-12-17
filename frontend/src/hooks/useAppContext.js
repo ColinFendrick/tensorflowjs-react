@@ -6,17 +6,27 @@ import { AppContext } from '../context/AppContext';
 const useAppContext = () => {
 	const [appState, setAppState] = useContext(AppContext);
 
-	const checkHealth = async (page = '') => {
+	const checkHealth = async () => {
 		try {
-			await AppService.get(page);
-			setAppState({ healthy: true, error: null });
-		} catch (e) {
-			setAppState({ healthy: false, error: e });
+			await AppService.healthCheck();
+			setAppState({ ...appState, error: null });
+		} catch (error) {
+			setAppState({ ...appState, error });
+		}
+	};
+
+	const getModel = async () => {
+		try {
+			const res = await AppService.get();
+			setAppState({ ...appState, error: null, data: res.data });
+		} catch (error) {
+			setAppState({ ...appState, error });
 		}
 	};
 
 	return {
 		checkHealth,
+		getModel,
 		appState,
 		setAppState
 	};

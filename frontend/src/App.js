@@ -6,9 +6,9 @@ import { useAppContext } from './hooks';
 import { Home } from './components';
 
 const App = () => {
-	const { checkHealth } = useAppContext();
+	const { getModel } = useAppContext();
 
-	useEffect(checkHealth, []);
+	useEffect(getModel, []);
 
 	return (
 		<div>

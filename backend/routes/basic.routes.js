@@ -4,5 +4,5 @@ module.exports = app => {
 
 	router.get('/', controller.get);
 
-	app.use('/basics', router);
+	app.use('/', router);
 };

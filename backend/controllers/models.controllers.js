@@ -12,10 +12,7 @@ exports.get = async (req, res) => {
 	try {
 		if (fs.existsSync(abspath)) {
 			const model = require(relpath);
-			res.status(200).send({
-				messsage: 'Welcome',
-				data: model
-			});
+			res.status(200).send(model);
 		} else {
 			const { stdout, stderr } = await exec('node ml-model/main.js --epochs=0');
 
@@ -26,12 +23,8 @@ exports.get = async (req, res) => {
 					if (error) res.status(400).send({ error });
 
 					const model = require(relpath);
-					res.status(200).send({
-						messsage: 'Welcome',
-						data: model
-					});
+					res.status(200).send(model);
 				});
-
 		}
 	} catch (error) {
 		res.status(400).send({ error });
