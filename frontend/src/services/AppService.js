@@ -1,6 +1,8 @@
 import http from '../http-common';
 
-const get = () => http.get('/basics');
+const PREFIX = '/models';
+
+const get = () => http.get(`${PREFIX}`);
 
 const service = { get };
 

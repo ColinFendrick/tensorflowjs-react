@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./routes/basic.routes')(app);
+require('./routes/models.routes')(app);
 
 app.get('/', (req, res) => {
 	res.json({
